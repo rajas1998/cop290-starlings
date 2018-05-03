@@ -14,3 +14,5 @@ In this project, through computer simulations and mathematical models, we try to
 Flocking is the collective motion of a large number of self-propelled entities and is a collective animal behavior exhibited 
 by many living beings such as birds, fish, bacteria, and insects. It is considered an emergent behavior arising from simple rules 
 that are followed by individuals and does not involve any central coordination.
+
+Project is implemented in Java using Processing library.
