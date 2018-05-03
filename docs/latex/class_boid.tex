@@ -1,0 +1,167 @@
+\hypertarget{class_boid}{}\section{Boid Class Reference}
+\label{class_boid}\index{Boid@{Boid}}
+
+
+Class to represent a single unit or boid.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_boid_a3512b360e60eec95f22e1bbaf14d3346}{calc\+\_\+neighbours}} (Array\+List$<$ \mbox{\hyperlink{class_boid}{Boid}} $>$ boids)
+\begin{DoxyCompactList}\small\item\em Calculate the neighbours of the boid. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_boid_ae286f6aa9f01bed28bc379200c3d7885}{run}} (Array\+List$<$ \mbox{\hyperlink{class_boid}{Boid}} $>$ boids)
+\begin{DoxyCompactList}\small\item\em Main function to integrate all the updates of the boid, position, velocity and acceleration. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_boid_a86313f583d25e2942a38321a708a2cd7}\label{class_boid_a86313f583d25e2942a38321a708a2cd7}} 
+void \mbox{\hyperlink{class_boid_a86313f583d25e2942a38321a708a2cd7}{increment}} ()
+\begin{DoxyCompactList}\small\item\em Increment the timer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_boid_a4e57f0bfa16c25001a7b0909185781e4}{apply\+Force}} (P\+Vector force)
+\begin{DoxyCompactList}\small\item\em Apply the particular force. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_boid_a7a31874a995e7439e894dc0141979ab2}{flock}} (Array\+List$<$ \mbox{\hyperlink{class_boid}{Boid}} $>$ boids)
+\begin{DoxyCompactList}\small\item\em Accumulates a new acceleration each time based on three rules. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_boid_a688446a89dbcacbd32cfbb49074eee46}\label{class_boid_a688446a89dbcacbd32cfbb49074eee46}} 
+void \mbox{\hyperlink{class_boid_a688446a89dbcacbd32cfbb49074eee46}{update}} ()
+\begin{DoxyCompactList}\small\item\em Method to update position. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_boid_afb58db2cab7b093448fedfdcc09fd276}\label{class_boid_afb58db2cab7b093448fedfdcc09fd276}} 
+P\+Vector {\bfseries seek} (P\+Vector target)
+\item 
+void \mbox{\hyperlink{class_boid_a3dcde93686101c36fbf97a0dd2f2743b}{render}} ()
+\begin{DoxyCompactList}\small\item\em Method to render the boid according to the current heading, velocity and position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_boid_a972b44c740e6c93920e66be20ffeed81}{borders}} ()
+\begin{DoxyCompactList}\small\item\em Wraparound the boid along corners. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_boid_a6d784c3643c0fa5b8865def7f6f63437}\label{class_boid_a6d784c3643c0fa5b8865def7f6f63437}} 
+P\+Vector \mbox{\hyperlink{class_boid_a6d784c3643c0fa5b8865def7f6f63437}{separate}} ()
+\begin{DoxyCompactList}\small\item\em The rule for the separation of boids. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_boid_aecb2dfae64c75103498178e7d1db696b}\label{class_boid_aecb2dfae64c75103498178e7d1db696b}} 
+P\+Vector \mbox{\hyperlink{class_boid_aecb2dfae64c75103498178e7d1db696b}{align}} ()
+\begin{DoxyCompactList}\small\item\em The rule for the alignmenty of boids. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_boid_ae4805e8086160ded6399c44ec6d168fb}\label{class_boid_ae4805e8086160ded6399c44ec6d168fb}} 
+P\+Vector \mbox{\hyperlink{class_boid_ae4805e8086160ded6399c44ec6d168fb}{cohesion}} ()
+\begin{DoxyCompactList}\small\item\em The rule for the cohesion of boids. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_boid_a88de6e18e38e062b6363bfb2741d85f7}\label{class_boid_a88de6e18e38e062b6363bfb2741d85f7}} 
+P\+Vector \mbox{\hyperlink{class_boid_a88de6e18e38e062b6363bfb2741d85f7}{avoid\+Obstacles}} ()
+\begin{DoxyCompactList}\small\item\em The rule for avoidance of obstacles by the boids. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_boid_a350adf423a0d66855334ed5be8a25658}\label{class_boid_a350adf423a0d66855334ed5be8a25658}} 
+static void {\bfseries main} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_boid_a1c665a132b8231e06e6762fb1c02f369}\label{class_boid_a1c665a132b8231e06e6762fb1c02f369}} 
+P\+Vector \mbox{\hyperlink{class_boid_a1c665a132b8231e06e6762fb1c02f369}{position}}
+\begin{DoxyCompactList}\small\item\em Vector to show the position of the current boid. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_boid_a1229124743705891df66f137e9aa032e}\label{class_boid_a1229124743705891df66f137e9aa032e}} 
+P\+Vector \mbox{\hyperlink{class_boid_a1229124743705891df66f137e9aa032e}{velocity}}
+\begin{DoxyCompactList}\small\item\em Vector to show the velocity of the current boid. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_boid_a945a8f4e1ef0c76118c44d5d735a0d89}\label{class_boid_a945a8f4e1ef0c76118c44d5d735a0d89}} 
+P\+Vector \mbox{\hyperlink{class_boid_a945a8f4e1ef0c76118c44d5d735a0d89}{acceleration}}
+\begin{DoxyCompactList}\small\item\em Vector to show the acceleration of the current boid. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_boid_aab42048b1c1f3efc848eac0f69d1a930}\label{class_boid_aab42048b1c1f3efc848eac0f69d1a930}} 
+Array\+List$<$ \mbox{\hyperlink{class_boid}{Boid}} $>$ \mbox{\hyperlink{class_boid_aab42048b1c1f3efc848eac0f69d1a930}{neighbors}}
+\begin{DoxyCompactList}\small\item\em Array\+List containing all the neighbours defined by the radius in which they must exist. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_boid_ad80d5244136eb1da1723506609ea29a4}\label{class_boid_ad80d5244136eb1da1723506609ea29a4}} 
+int \mbox{\hyperlink{class_boid_ad80d5244136eb1da1723506609ea29a4}{decision\+\_\+timer}} = 0
+\begin{DoxyCompactList}\small\item\em Time taken by the boid to decide when to change its position. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_boid_a3d6ba3f51ea31d95c2d18bc70b884981}\label{class_boid_a3d6ba3f51ea31d95c2d18bc70b884981}} 
+float \mbox{\hyperlink{class_boid_a3d6ba3f51ea31d95c2d18bc70b884981}{mass}} = 0.\+058
+\begin{DoxyCompactList}\small\item\em Mass of the current boid. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_boid_a745696a6bd855bb7ac3464bdc05a2fd5}\label{class_boid_a745696a6bd855bb7ac3464bdc05a2fd5}} 
+float \mbox{\hyperlink{class_boid_a745696a6bd855bb7ac3464bdc05a2fd5}{energy}}
+\begin{DoxyCompactList}\small\item\em Energy of the current boid. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_boid_a38ae17acf614f4f001584e908b6f3333}\label{class_boid_a38ae17acf614f4f001584e908b6f3333}} 
+float \mbox{\hyperlink{class_boid_a38ae17acf614f4f001584e908b6f3333}{momentum}}
+\begin{DoxyCompactList}\small\item\em Momentum of the current boid. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to represent a single unit or boid. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_boid_a4e57f0bfa16c25001a7b0909185781e4}\label{class_boid_a4e57f0bfa16c25001a7b0909185781e4}} 
+\index{Boid@{Boid}!apply\+Force@{apply\+Force}}
+\index{apply\+Force@{apply\+Force}!Boid@{Boid}}
+\subsubsection{\texorpdfstring{apply\+Force()}{applyForce()}}
+{\footnotesize\ttfamily void Boid.\+apply\+Force (\begin{DoxyParamCaption}\item[{P\+Vector}]{force }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Apply the particular force. 
+
+This function simply adds the acceleration passed to it to the total acceleration 
+\begin{DoxyParams}{Parameters}
+{\em force} & The acceleration which must be added to the total acceleration. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_boid_a972b44c740e6c93920e66be20ffeed81}\label{class_boid_a972b44c740e6c93920e66be20ffeed81}} 
+\index{Boid@{Boid}!borders@{borders}}
+\index{borders@{borders}!Boid@{Boid}}
+\subsubsection{\texorpdfstring{borders()}{borders()}}
+{\footnotesize\ttfamily void Boid.\+borders (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Wraparound the boid along corners. 
+
+Modulo the dimensions of the screen \mbox{\Hypertarget{class_boid_a3512b360e60eec95f22e1bbaf14d3346}\label{class_boid_a3512b360e60eec95f22e1bbaf14d3346}} 
+\index{Boid@{Boid}!calc\+\_\+neighbours@{calc\+\_\+neighbours}}
+\index{calc\+\_\+neighbours@{calc\+\_\+neighbours}!Boid@{Boid}}
+\subsubsection{\texorpdfstring{calc\+\_\+neighbours()}{calc\_neighbours()}}
+{\footnotesize\ttfamily void Boid.\+calc\+\_\+neighbours (\begin{DoxyParamCaption}\item[{Array\+List$<$ \mbox{\hyperlink{class_boid}{Boid}} $>$}]{boids }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calculate the neighbours of the boid. 
+
+Goes over the boids calculating which of the boids should be included in the neighbours 
+\begin{DoxyParams}{Parameters}
+{\em boids} & The list containing all boids \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_boid_a7a31874a995e7439e894dc0141979ab2}\label{class_boid_a7a31874a995e7439e894dc0141979ab2}} 
+\index{Boid@{Boid}!flock@{flock}}
+\index{flock@{flock}!Boid@{Boid}}
+\subsubsection{\texorpdfstring{flock()}{flock()}}
+{\footnotesize\ttfamily void Boid.\+flock (\begin{DoxyParamCaption}\item[{Array\+List$<$ \mbox{\hyperlink{class_boid}{Boid}} $>$}]{boids }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Accumulates a new acceleration each time based on three rules. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em boids} & The list containing all boids \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_boid_a3dcde93686101c36fbf97a0dd2f2743b}\label{class_boid_a3dcde93686101c36fbf97a0dd2f2743b}} 
+\index{Boid@{Boid}!render@{render}}
+\index{render@{render}!Boid@{Boid}}
+\subsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void Boid.\+render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Method to render the boid according to the current heading, velocity and position. 
+
+Renders the boids accordingly \mbox{\Hypertarget{class_boid_ae286f6aa9f01bed28bc379200c3d7885}\label{class_boid_ae286f6aa9f01bed28bc379200c3d7885}} 
+\index{Boid@{Boid}!run@{run}}
+\index{run@{run}!Boid@{Boid}}
+\subsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void Boid.\+run (\begin{DoxyParamCaption}\item[{Array\+List$<$ \mbox{\hyperlink{class_boid}{Boid}} $>$}]{boids }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Main function to integrate all the updates of the boid, position, velocity and acceleration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em boids} & The list containing all boids \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Boid.\+java\end{DoxyCompactItemize}

@@ -1,26 +1,26 @@
 //! Class to maintain the aggregate behaviour of boids
-class Flock {
+public class Flock {
   //! List of boids in the flock
-  ArrayList<Boid> boids; // An ArrayList for all the boids
+  public ArrayList<Boid> boids; // An ArrayList for all the boids
   
   float totalenergytemp;
   // The total energy of the flock
-  float totalenergy;
+  public float totalenergy;
   float totalmomentumtemp;
   //! The total momentum of the flock
-  float totalmomentum;
+  public float totalmomentum;
 
   //! The number of times the display is updated before the speed shown changes
-  int notimes = 100;
+  public int notimes = 100;
 
   //! The timer/clock to look at the changes seen in the flock
-  int timer = 5;
+  public int timer = 5;
 
   Flock() {
     boids = new ArrayList<Boid>(); // Initialize the ArrayList
   }
   //! Thread class to run the boids in parallel
-  class RunParallel extends Thread{
+  public class RunParallel extends Thread{
    //! The start of the boid array
    int start;
    //! The end of the boid array
@@ -45,7 +45,8 @@ class Flock {
     }
   }
   //! Run the entire flock
-  void run() {
+  /*! Runs the entire flock code*/
+  public void run() {
     timer--;
     if (timer == 0){
       totalenergy = totalenergytemp;
@@ -95,7 +96,7 @@ class Flock {
     } 
   }
 
-  void addBoid(Boid b) {
+  public void addBoid(Boid b) {
     boids.add(b);
   }
 

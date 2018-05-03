@@ -1,27 +1,27 @@
 
 //! Class to represent a single unit or boid
-class Boid {
+public class Boid {
 
 
   //! Vector to show the position of the current boid
-  PVector position;
+  public PVector position;
   //! Vector to show the velocity of the current boid
-  PVector velocity;
+  public PVector velocity;
   //! Vector to show the acceleration of the current boid
-  PVector acceleration;
+  public PVector acceleration;
   //! ArrayList containing all the neighbours defined by the radius in which they must exist
   /*
     There is a defined distance within which boids are considered neighbours
   */
-  ArrayList<Boid> neighbors;
+  public ArrayList<Boid> neighbors;
   //! Time taken by the boid to decide when to change its position
-  int decision_timer = 0;
+  public int decision_timer = 0;
   //! Mass of the current boid
-  float mass = 0.058; 
+  public float mass = 0.058; 
   //! Energy of the current boid
-  float energy;
+  public float energy;
   //! Momentum of the current boid
-  float momentum;
+  public float momentum;
 
   //! Initialization function
   /*! 
@@ -40,7 +40,7 @@ class Boid {
     Goes over the boids calculating which of the boids should be included in the neighbours
     \param boids The list containing all boids
   */
-  void calc_neighbours(ArrayList<Boid> boids){
+  public void calc_neighbours(ArrayList<Boid> boids){
     ArrayList<Boid> next_neighbors = new ArrayList<Boid>();
     for (Boid other:boids){
       float d = PVector.dist(position, other.position);
@@ -55,7 +55,7 @@ class Boid {
   /*!
     \param boids The list containing all boids
   */
-  void run(ArrayList<Boid> boids) {
+  public void run(ArrayList<Boid> boids) {
     if (decision_timer == 0){
       calc_neighbours(boids);
     }
@@ -67,7 +67,7 @@ class Boid {
   }
 
   //! Increment the timer
-  void increment(){
+  public void increment(){
     decision_timer = (decision_timer + 1) % time_for_update;
   }
 
@@ -76,7 +76,7 @@ class Boid {
     This function simply adds the acceleration passed to it to the total acceleration
     \param force The acceleration which must be added to the total acceleration.
   */
-  void applyForce(PVector force) {
+  public void applyForce(PVector force) {
     acceleration.add(force);
   }
 
@@ -84,7 +84,7 @@ class Boid {
   /*!
     \param boids The list containing all boids
   */
-  void flock(ArrayList<Boid> boids) {
+  public void flock(ArrayList<Boid> boids) {
     PVector sep = separate();   // Separation
     PVector ali = align();      // Alignment
     PVector coh = cohesion();   // Cohesion
@@ -111,7 +111,7 @@ class Boid {
   }
 
   //! Method to update position
-  void update() {
+  public void update() {
     energy = 0.5 * mass * (velocity.mag() * velocity.mag());
     momentum = mass * velocity.mag();
     velocity.add(acceleration);
@@ -120,7 +120,7 @@ class Boid {
     acceleration.mult(0);
   }
 
-  PVector seek(PVector target) {
+  public PVector seek(PVector target) {
     PVector desired = PVector.sub(target, position);  // A vector pointing from the position to the target
     desired.normalize();
     desired.mult(maxspeed);
@@ -132,7 +132,7 @@ class Boid {
   /*!
       Renders the boids accordingly
   */
-  void render() {
+  public void render() {
     float theta = velocity.heading2D() + radians(90);
     
     fill(200, 100);
@@ -152,7 +152,7 @@ class Boid {
   /*!
       Modulo the dimensions of the screen
   */
-  void borders() {
+  public void borders() {
     if (position.x < -r) position.x = width+r;
     if (position.y < -r) position.y = height+r;
     if (position.x > width+r) position.x = -r;
@@ -160,7 +160,7 @@ class Boid {
   }
 
   //! The rule for the separation of boids
-  PVector separate () {
+  public PVector separate () {
     PVector steer = new PVector(0, 0, 0);
     int count = 0;
     for (Boid other : neighbors) {
@@ -189,7 +189,7 @@ class Boid {
     return steer;
   }
   //! The rule for the alignmenty of boids
-  PVector align () {
+  public PVector align () {
     PVector sum = new PVector(0, 0);
     int count = 0;
     for (Boid other : neighbors) {
@@ -210,7 +210,7 @@ class Boid {
   }
 
    //! The rule for the cohesion of boids
-   PVector cohesion () {
+   public PVector cohesion () {
     PVector sum = new PVector(0, 0);   // Start with empty vector to accumulate all positions
     int count = 0;
     for (Boid other : neighbors) {
@@ -226,7 +226,7 @@ class Boid {
     }
   }
   //! The rule for avoidance of obstacles by the boids
-  PVector avoidObstacles(){
+  public PVector avoidObstacles(){
     PVector steer = new PVector(0, 0, 0);
     int count = 0;
     for (Obstacle other : obstacles) {
@@ -240,6 +240,9 @@ class Boid {
       }
     }
     return steer;
+  }
+  public static void main(){
+    
   }
 }
 
