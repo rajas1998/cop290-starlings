@@ -51,7 +51,7 @@ class Boid {
     // Arbitrarily weight these forces
     sep.mult(1.5);
     ali.mult(1.0);
-    coh.mult(1.0);
+    coh.mult(2.0);
     noise.mult(0.05);
     obst.mult(2.0);
     // Add the force vectors to acceleration

@@ -1,14 +1,15 @@
 Flock flock;
 
-static float maxspeed = 2;
+static float maxspeed = 4;
 static float maxforce = 0.03;
 static float r = 2.0;
 static float maxr = 50; 
 static int time_for_update = 5;
-static float desiredseparation = 70.0f;
+static float desiredseparation = 20.0f;
 static float obstacle_separation = desiredseparation * 2;
 static int num_of_obstacles = 30;
-static int num_of_boids = 2000;
+static int num_of_boids = 1000;
+String current = "boid";
 
 ArrayList<Obstacle> obstacles = new ArrayList<Obstacle>();
 
@@ -35,6 +36,20 @@ void draw() {
 
 // Add a new boid into the System
 void mousePressed() {
-  flock.addBoid(new Boid(mouseX,mouseY));
+  if (current == "boid")
+  {
+    flock.addBoid(new Boid(mouseX,mouseY));
+    num_of_boids++;
+  }
+  else if (current == "obstacle") {
+    obstacles.add(new Obstacle(mouseX,mouseY));
+  }
 }
 
+void keyPressed () {
+  if (key == 'b') {
+    current = "boid";
+  } else if (key == 'o') {
+    current = "obstacle";
+  }
+}
