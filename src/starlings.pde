@@ -91,6 +91,7 @@ class Boid {
     PVector noise = new PVector(random(2) - 1, random(2) -1); 
     PVector obst = avoidObstacles();
     PVector gravity = new PVector(0,1);
+    PVector wind = new PVector(0,random(1));
 
     // Arbitrarily weight these forces
     sep.mult(1.2);
@@ -99,6 +100,7 @@ class Boid {
     noise.mult(0.05);
     obst.mult(2.0);
     gravity.mult(0.002);
+    wind.mult(-0.004);
 
     // Add the force vectors to acceleration
     applyForce(sep);
@@ -107,6 +109,7 @@ class Boid {
     applyForce(noise);
     applyForce(obst);
     applyForce(gravity);
+    applyForce(wind);
 
   }
 

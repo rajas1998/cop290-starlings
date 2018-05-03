@@ -48,6 +48,11 @@ void mousePressed() {
   else if (current == "obstacle") {
     obstacles.add(new Obstacle(mouseX,mouseY));
   }
+  else if (current == "predator") {
+    Boid temp = new Boid(mouseX, mouseY);
+    flock.addBoid(temp);
+    num_of_boids++;
+  }
 }
 
 void keyPressed () {
@@ -55,5 +60,8 @@ void keyPressed () {
     current = "boid";
   } else if (key == 'o') {
     current = "obstacle";
+  }
+  else if (key == 'p') {
+    current = "predator";
   }
 }
